@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Generator</title>
+    <style>
+        body {
+            text-align: center;
+            background-color:lightcoral;
+        }
+        h1{
+            color: darkmagenta;
+            text-decoration: 1px solid white ;
+        }
+        button{
+            padding: 10px;
+            border-radius: 2px solid black ;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color:darkorchid;
+            color: white;
+            border: 2px solid white;
+            
+        }
+        p{
+            color: white;
+            font-size:22px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table Generator</h1>
+    <button onclick="tableGenerator()">Generate Table</button>
+    <p id="table"></p>
+
+
+    <script>
+        function tableGenerator() {
+            let tableNumber = +prompt("Which table do you want to print?");
+            let startPoint = +prompt("Enter the starting point of the table:");
+            let endPoint = +prompt("Enter the end point of the table:");
+    
+            let resultHTML = '';
+            for (let i = startPoint; i <= endPoint; i++) {
+                resultHTML += `${tableNumber} x ${i} = ${tableNumber * i}<br>`;
+            
+
+            }
+            
+            document.getElementById('table').innerHTML = resultHTML;
+        
+        }
+    </script>
+    
+</body>
+</html>
